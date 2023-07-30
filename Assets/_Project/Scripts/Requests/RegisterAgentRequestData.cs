@@ -3,9 +3,9 @@ using SVT.Networking;
 
 namespace _Project.Scripts.Requests
 {
-    public class RegisterAgentRequest : WebRequestData
+    public class RegisterAgentRequestData : WebRequestData
     {
-        public RegisterAgentRequest(string symbol, string faction)
+        public RegisterAgentRequestData(string symbol, string faction)
         {
             Symbol = symbol;
             Faction = faction;
