@@ -1,14 +1,14 @@
-using System;
+﻿using _Project.Scripts.Controllers.MainMenu;
 using _Project.Scripts.Response;
 using TMPro;
 using UnityEngine;
 
-namespace _Project.Scripts.Controllers.MainMenu
+namespace _Project.Scripts.Views.MainMenu
 {
     [RequireComponent(typeof(MainMenuController))]
-    public class InfoController : MonoBehaviour
+    public class StatsView : MonoBehaviour
     {
-        [SerializeField] private TextMeshProUGUI status, description, nextReset, frequency, version;
+        [SerializeField] private TextMeshProUGUI agents, ships, systems, waypoints;
         private MainMenuController _controller;
 
         private void Awake()
@@ -28,11 +28,10 @@ namespace _Project.Scripts.Controllers.MainMenu
 
         private void OnStatusReceived(GetStatusResponse response)
         {
-            status.text = $"Status: {response.Status}";
-            description.text = $"{response.Description}";
-            nextReset.text = $"Next Reset: {DateTime.Parse(response.ServerReset.Next):d}";
-            frequency.text = $"Reset Frequency: {response.ServerReset.Frequency}";
-            version.text = $"Version {response.Version}";
+            agents.text = $"Agents: {response.Stats.Agents}";
+            ships.text = $"Ships: {response.Stats.Ships}";
+            systems.text = $"Systems: {response.Stats.Systems}";
+            waypoints.text = $"Waypoints: {response.Stats.Waypoints}";
         }
     }
 }
