@@ -19,11 +19,14 @@ namespace SVT.Networking
         {
             get
             {
+                if (_headers.Count != 0) return _headers;
+
                 foreach (var header in headers)
                 {
                     if (_headers.TryAdd(header.Name, header.Value)) continue;
                     Debug.LogError($"Failed to add {header.Name} to dictionary.", this);
                 }
+
 
                 return _headers;
             }

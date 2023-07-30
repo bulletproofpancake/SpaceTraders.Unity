@@ -237,6 +237,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   getStatus: {fileID: 11400000, guid: 0345ed451fbad474cacc728784678f07, type: 2}
+  registerAgent: {fileID: 11400000, guid: 7c6fcd20ce28f7e4eab89d9c0b402d6f, type: 2}
+  getAgentInfo: {fileID: 11400000, guid: 4fd858ac9a2942844b90712aef8bdfb9, type: 2}
+  faction: COSMIC
+  symbol: B4LL15T1C
+  token: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGlmaWVyIjoiQjRMTDE1VDFDIiwidmVyc2lvbiI6InYyIiwicmVzZXRfZGF0ZSI6IjIwMjMtMDctMjkiLCJpYXQiOjE2OTA3MDE0MzEsInN1YiI6ImFnZW50LXRva2VuIn0.ZiYp2Szru4DtEnvmELUTCYYWYCuIbr-HW8FSWIzi52YuiJI4mKGXn0lTRXia_tt13vRh0GQm6lh5F4I-GtuF-uzmFmKC8SYUoFi4QeXqG4Y96SS4L4R9Tqk2P4f5G6Af8tNT3g7td8sn8aRlv_Sq5oi4j-cBLBEjgq4ld76aOTCAAbD0azO2jCa9j7BjK-UPUGOnCJotjWa5WeEVZsk_EiK6BX9LxaoPZ_c8DlVuRGXYZp1pzExoAVW6uDLHxX2-mY10Pc2C7pNvFG1fSLJoMi9ahwz0BOTyiT-KLxsl7ufbUi0fA7TdNtZkRflIIqNsBnQLE-HfnvNTj-nmvYrRJA
 --- !u!4 &1544196903
 Transform:
   m_ObjectHideFlags: 0
