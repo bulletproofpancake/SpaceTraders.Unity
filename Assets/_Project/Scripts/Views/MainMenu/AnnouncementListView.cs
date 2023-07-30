@@ -1,11 +1,10 @@
 ﻿using System.Collections.Generic;
 using _Project.Scripts.Response;
-using _Project.Scripts.Views.MainMenu;
 using UnityEngine;
 
-namespace _Project.Scripts.Controllers.MainMenu
+namespace _Project.Scripts.Views.MainMenu
 {
-    public class AnnouncementController : ToggleMainMenuView
+    public class AnnouncementListView : ToggleMainMenuView
     {
         [SerializeField] private AnnouncementView announcementViewPrefab;
         [SerializeField] private Transform announcementParent;

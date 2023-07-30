@@ -1,11 +1,10 @@
 ﻿using System.Collections.Generic;
 using _Project.Scripts.Response;
-using _Project.Scripts.Views.MainMenu;
 using UnityEngine;
 
-namespace _Project.Scripts.Controllers.MainMenu
+namespace _Project.Scripts.Views.MainMenu
 {
-    public class LeaderboardController : ToggleMainMenuView
+    public class LeaderboardListView : ToggleMainMenuView
     {
         [SerializeField] private LeaderboardEntryView leaderboardEntryPrefab;
         [SerializeField] private Transform creditsParent, chartParent;

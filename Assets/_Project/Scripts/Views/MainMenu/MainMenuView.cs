@@ -1,5 +1,6 @@
 ﻿using System;
-using _Project.Scripts.Controllers.MainMenu;
+using _Project.Scripts.Controllers;
+using _Project.Scripts.Interfaces;
 using _Project.Scripts.Response;
 using UnityEngine;
 
@@ -7,7 +8,12 @@ namespace _Project.Scripts.Views.MainMenu
 {
     public abstract class MainMenuView : MonoBehaviour
     {
-        [field: SerializeField] public MainMenuController Controller { get; private set; }
+        private MainMenuController Controller { get; set; }
+
+        private void Awake()
+        {
+            if (!Controller) Controller = FindObjectOfType<MainMenuController>();
+        }
 
         protected virtual void OnEnable()
         {
@@ -22,10 +28,9 @@ namespace _Project.Scripts.Views.MainMenu
         public abstract void OnStatusReceived(GetStatusResponse response);
     }
 
-    public abstract class ToggleMainMenuView : MainMenuView
+    public abstract class ToggleMainMenuView : MainMenuView, IToggleView
     {
         [field: SerializeField] public GameObject GameObject { get; private set; }
-        public event Action<ToggleMainMenuView> ViewEnabled, ViewDisabled;
 
         public virtual void EnableObject()
         {
@@ -38,5 +43,7 @@ namespace _Project.Scripts.Views.MainMenu
             GameObject.SetActive(false);
             ViewDisabled?.Invoke(this);
         }
+
+        public event Action<IToggleView> ViewEnabled, ViewDisabled;
     }
 }
