@@ -6,7 +6,7 @@ namespace _Project.Scripts.Response
     {
         [JsonProperty("status")] public string Status { get; private set; }
         [JsonProperty("version")] public string Version { get; private set; }
-        [JsonProperty("resetData")] public string ResetDate { get; private set; }
+        [JsonProperty("resetDate")] public string ResetDate { get; private set; }
         [JsonProperty("description")] public string Description { get; private set; }
         [JsonProperty("stats")] public Stats Stats { get; private set; }
         [JsonProperty("leaderboards")] public Leaderboard Leaderboards { get; private set; }
