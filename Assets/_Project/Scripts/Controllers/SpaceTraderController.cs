@@ -17,7 +17,7 @@ namespace _Project.Scripts.Controllers
 
         private IEnumerator Start()
         {
-            yield return GetAgentInfo();
+            yield return GetApiStatus();
         }
 
         public IEnumerator GetApiStatus()
@@ -25,6 +25,8 @@ namespace _Project.Scripts.Controllers
             var request = getStatus.CreateRequest();
             yield return request.SendWebRequest();
             print(request.downloadHandler.text);
+            var response = JsonConvert.DeserializeObject<GetStatusResponse>(request.downloadHandler.text);
+            print(response.Description);
         }
 
         public IEnumerator GetAgentInfo()
