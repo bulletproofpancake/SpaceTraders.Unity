@@ -7,10 +7,10 @@ namespace _Project.Scripts.Response
     [Serializable]
     public class RegisterAgentResponse
     {
-        [JsonProperty("data")] public Data Data { get; private set; }
+        [JsonProperty("data")] public RegisterAgentResponseData Data { get; private set; }
     }
 
-    public class Data
+    public class RegisterAgentResponseData
     {
         [JsonProperty("agent")] public Agent Agent { get; private set; }
         [JsonProperty("contract")] public Contract Contract { get; private set; }
