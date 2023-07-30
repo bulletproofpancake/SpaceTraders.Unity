@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.jologutierrez.svt": {
+      "version": "https://github.com/bulletproofpancake/SVT.Unity.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "b82ab649e1be42c20e078131f60c94ad4665f0dd"
+    },
     "com.unity.2d.animation": {
       "version": "7.0.5",
       "depth": 1,
@@ -157,8 +164,8 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.nuget.newtonsoft-json": {
-      "version": "3.0.2",
-      "depth": 2,
+      "version": "3.2.1",
+      "depth": 0,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
