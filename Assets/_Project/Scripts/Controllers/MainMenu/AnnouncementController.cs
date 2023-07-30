@@ -5,31 +5,13 @@ using UnityEngine;
 
 namespace _Project.Scripts.Controllers.MainMenu
 {
-    [RequireComponent(typeof(MainMenuController))]
-    public class AnnouncementController : MonoBehaviour
+    public class AnnouncementController : ToggleMainMenuView
     {
         [SerializeField] private AnnouncementView announcementViewPrefab;
         [SerializeField] private Transform announcementParent;
         private readonly List<AnnouncementView> _currentViews = new();
 
-        private MainMenuController _controller;
-
-        private void Awake()
-        {
-            _controller = GetComponent<MainMenuController>();
-        }
-
-        private void OnEnable()
-        {
-            _controller.StatusReceived += OnStatusReceived;
-        }
-
-        private void OnDisable()
-        {
-            _controller.StatusReceived -= OnStatusReceived;
-        }
-
-        private void OnStatusReceived(GetStatusResponse response)
+        public override void OnStatusReceived(GetStatusResponse response)
         {
             if (_currentViews.Count > 0)
             {

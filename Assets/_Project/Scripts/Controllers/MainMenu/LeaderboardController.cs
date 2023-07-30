@@ -5,31 +5,14 @@ using UnityEngine;
 
 namespace _Project.Scripts.Controllers.MainMenu
 {
-    [RequireComponent(typeof(MainMenuController))]
-    public class LeaderboardController : MonoBehaviour
+    public class LeaderboardController : ToggleMainMenuView
     {
         [SerializeField] private LeaderboardEntryView leaderboardEntryPrefab;
         [SerializeField] private Transform creditsParent, chartParent;
         private readonly List<LeaderboardEntryView> _chartsList = new();
-        private MainMenuController _controller;
-        private List<LeaderboardEntryView> _creditsList = new();
+        private readonly List<LeaderboardEntryView> _creditsList = new();
 
-        private void Awake()
-        {
-            _controller = GetComponent<MainMenuController>();
-        }
-
-        private void OnEnable()
-        {
-            _controller.StatusReceived += OnStatusReceived;
-        }
-
-        private void OnDisable()
-        {
-            _controller.StatusReceived -= OnStatusReceived;
-        }
-
-        private void OnStatusReceived(GetStatusResponse response)
+        public override void OnStatusReceived(GetStatusResponse response)
         {
             GenerateCreditsViews(response.Leaderboards.MostCredits);
             GenerateChartsViews(response.Leaderboards.MostSubmittedCharts);

@@ -228,10 +228,11 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1887446319}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 621832050}
+        m_TargetAssemblyTypeName: _Project.Scripts.Views.MainMenu.ToggleMainMenuView,
+          Assembly-CSharp
+        m_MethodName: DisableObject
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -448,10 +449,11 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1255394994}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 621832052}
+        m_TargetAssemblyTypeName: _Project.Scripts.Views.MainMenu.ToggleMainMenuView,
+          Assembly-CSharp
+        m_MethodName: DisableObject
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2078,10 +2080,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 573460989}
-  - {fileID: 800610763}
-  - {fileID: 1887446320}
-  - {fileID: 790680690}
-  - {fileID: 1255394995}
+  - {fileID: 739480102}
   - {fileID: 2003449347}
   m_Father: {fileID: 697777326}
   m_RootOrder: 0
@@ -2104,6 +2103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   getStatusRequest: {fileID: 11400000, guid: 0345ed451fbad474cacc728784678f07, type: 2}
+  toggleViews: []
 --- !u!114 &621832048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2116,6 +2116,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c40674d6cfb872944ab66f720e47f4a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Controller>k__BackingField: {fileID: 621832047}
+  <GameObject>k__BackingField: {fileID: 800610762}
   status: {fileID: 1831727902}
   description: {fileID: 524514457}
   nextReset: {fileID: 1158353990}
@@ -2133,6 +2135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 249d1c8bb1e34120a3a69fcc4a55b6c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Controller>k__BackingField: {fileID: 621832047}
   resetDisplay: {fileID: 1738953680}
 --- !u!114 &621832050
 MonoBehaviour:
@@ -2146,6 +2149,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcbe1f9aaf454603b7c002b2e8306f1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Controller>k__BackingField: {fileID: 621832047}
+  <GameObject>k__BackingField: {fileID: 1887446319}
   agents: {fileID: 879447574}
   ships: {fileID: 1312802029}
   systems: {fileID: 1986717122}
@@ -2162,6 +2167,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a8cb0831f4f4c23b56b0dfb9ebcbd1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Controller>k__BackingField: {fileID: 621832047}
+  <GameObject>k__BackingField: {fileID: 790680689}
   announcementViewPrefab: {fileID: 1840600723938295148, guid: 8ac0f7dda267da347921e337c9af2820, type: 3}
   announcementParent: {fileID: 668560207}
 --- !u!114 &621832052
@@ -2176,6 +2183,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9074a612a4044bae9e0de8b999fb0313, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Controller>k__BackingField: {fileID: 621832047}
+  <GameObject>k__BackingField: {fileID: 1255394994}
   leaderboardEntryPrefab: {fileID: 2360479824475689356, guid: 9b2be1bf652bf004a83f13fc223abf71, type: 3}
   creditsParent: {fileID: 802429253}
   chartParent: {fileID: 1969766360}
@@ -2514,6 +2523,46 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &739480101
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 739480102}
+  m_Layer: 5
+  m_Name: Panels
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &739480102
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739480101}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 800610763}
+  - {fileID: 1887446320}
+  - {fileID: 790680690}
+  - {fileID: 1255394995}
+  m_Father: {fileID: 621832046}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &764869612
 GameObject:
   m_ObjectHideFlags: 0
@@ -2624,8 +2673,8 @@ RectTransform:
   m_Children:
   - {fileID: 1192734205}
   - {fileID: 1726540425}
-  m_Father: {fileID: 621832046}
-  m_RootOrder: 3
+  m_Father: {fileID: 739480102}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2883,8 +2932,8 @@ RectTransform:
   - {fileID: 95249323}
   - {fileID: 1388321432}
   - {fileID: 1113561245}
-  m_Father: {fileID: 621832046}
-  m_RootOrder: 1
+  m_Father: {fileID: 739480102}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3683,10 +3732,11 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 790680689}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 621832051}
+        m_TargetAssemblyTypeName: _Project.Scripts.Views.MainMenu.ToggleMainMenuView,
+          Assembly-CSharp
+        m_MethodName: EnableObject
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4320,10 +4370,11 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1255394994}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 621832052}
+        m_TargetAssemblyTypeName: _Project.Scripts.Views.MainMenu.ToggleMainMenuView,
+          Assembly-CSharp
+        m_MethodName: EnableObject
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4424,8 +4475,8 @@ RectTransform:
   m_Children:
   - {fileID: 445618239}
   - {fileID: 77788532}
-  m_Father: {fileID: 621832046}
-  m_RootOrder: 4
+  m_Father: {fileID: 739480102}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4845,10 +4896,11 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 800610762}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 621832048}
+        m_TargetAssemblyTypeName: _Project.Scripts.Views.MainMenu.ToggleMainMenuView,
+          Assembly-CSharp
+        m_MethodName: EnableObject
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4980,10 +5032,11 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 800610762}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 621832048}
+        m_TargetAssemblyTypeName: _Project.Scripts.Views.MainMenu.ToggleMainMenuView,
+          Assembly-CSharp
+        m_MethodName: DisableObject
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5382,10 +5435,11 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1887446319}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 621832050}
+        m_TargetAssemblyTypeName: _Project.Scripts.Views.MainMenu.ToggleMainMenuView,
+          Assembly-CSharp
+        m_MethodName: EnableObject
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5983,10 +6037,11 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 790680689}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 621832051}
+        m_TargetAssemblyTypeName: _Project.Scripts.Views.MainMenu.ToggleMainMenuView,
+          Assembly-CSharp
+        m_MethodName: DisableObject
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6631,8 +6686,8 @@ RectTransform:
   - {fileID: 1986717121}
   - {fileID: 523413888}
   - {fileID: 45320956}
-  m_Father: {fileID: 621832046}
-  m_RootOrder: 2
+  m_Father: {fileID: 739480102}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6983,7 +7038,7 @@ RectTransform:
   m_Children:
   - {fileID: 1738953678}
   m_Father: {fileID: 621832046}
-  m_RootOrder: 5
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}

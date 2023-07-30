@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using _Project.Scripts.Response;
+using _Project.Scripts.Views.MainMenu;
 using Newtonsoft.Json;
 using SVT.Networking;
 using SVT.Networking.Extensions;
@@ -11,6 +12,7 @@ namespace _Project.Scripts.Controllers.MainMenu
     public class MainMenuController : MonoBehaviour
     {
         [SerializeField] private WebRequestInfo getStatusRequest;
+        [SerializeField] private ToggleMainMenuView[] toggleViews;
         private GetStatusResponse _status;
 
         public GetStatusResponse Status
@@ -23,9 +25,30 @@ namespace _Project.Scripts.Controllers.MainMenu
             }
         }
 
+        private void Awake()
+        {
+            if (toggleViews.Length == 0) toggleViews = FindObjectsOfType<ToggleMainMenuView>();
+        }
+
         private void OnEnable()
         {
+            foreach (var toggleView in toggleViews) toggleView.ViewEnabled += OnViewEnabled;
+
             GetStatus();
+        }
+
+        private void OnDisable()
+        {
+            foreach (var toggleView in toggleViews) toggleView.ViewEnabled -= OnViewEnabled;
+        }
+
+        private void OnViewEnabled(ToggleMainMenuView view)
+        {
+            foreach (var toggleView in toggleViews)
+            {
+                if (view == toggleView) continue;
+                toggleView.DisableObject();
+            }
         }
 
         public event Action<GetStatusResponse> StatusReceived;
