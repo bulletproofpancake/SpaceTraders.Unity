@@ -10,9 +10,9 @@ namespace _Project.Scripts.Controllers.MainMenu
     {
         [SerializeField] private AnnouncementView announcementViewPrefab;
         [SerializeField] private Transform announcementParent;
+        private readonly List<AnnouncementView> _currentViews = new();
 
         private MainMenuController _controller;
-        private readonly List<AnnouncementView> _currentViews = new();
 
         private void Awake()
         {
@@ -46,6 +46,7 @@ namespace _Project.Scripts.Controllers.MainMenu
             {
                 var view = Instantiate(announcementViewPrefab, announcementParent);
                 view.Init(announcement.Title, announcement.Body);
+                _currentViews.Add(view);
             }
         }
     }
